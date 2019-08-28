@@ -1,8 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import SearchBar from "./components/search_bar";
 import * as serviceWorker from './serviceWorker';
+
+const API_KEY = 'AIzaSyAsvLVh8NrTX0tWZ2sR5OQ0Exh0soFttk4'
+
+const App = () => {
+    return (
+        <div>
+            <SearchBar />
+        </div>
+    );
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
