@@ -6,8 +6,8 @@ import SearchBar from "./components/search_bar";
 import YTSearch from 'youtube-api-search';
 import VideoList from './components/video_list'
 import VideoDetail from './components/video_detail'
+import _ from 'lodash';
 
-// import * as serviceWorker from './serviceWorker';
 
 const API_KEY = 'AIzaSyAsvLVh8NrTX0tWZ2sR5OQ0Exh0soFttk4'
 
@@ -24,17 +24,19 @@ class App extends Component {
 
     videoSearch(term) {
         YTSearch({ key: API_KEY, term: term }, videos => {
-            // ES6 syntax for this.setState({ videos: videos});
             this.setState({
-                videos: videos,
+                videos,
                 selectedVideo: videos[0]
             });
         })
     }
+
+
     render(){
+        const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 500);
         return (
             <div>
-            <SearchBar onSearchTermSearch={term => this.videoSearch(term)}/>
+            <SearchBar onSearchTermSearch={videoSearch}/>
                 <div className="row">
                     <VideoDetail video={this.state.selectedVideo} />
                     <VideoList 
