@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css'; // import Bootstrap CSS library
-import "./index.css"; // in addition, import our own CSS specs
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import "./index.css"; 
 import SearchBar from "./components/search_bar";
 import YTSearch from 'youtube-api-search';
 import VideoList from './components/video_list'
@@ -51,8 +51,3 @@ class App extends Component {
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-//serviceWorker.unregister();
