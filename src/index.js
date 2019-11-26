@@ -9,7 +9,7 @@ import VideoDetail from './components/video_detail'
 import _ from 'lodash';
 
 
-const API_KEY = 'AIzaSyAsvLVh8NrTX0tWZ2sR5OQ0Exh0soFttk4'
+const API_KEY = 'INSERT API KEY HERE'
 
 class App extends Component {
     constructor(props) {
